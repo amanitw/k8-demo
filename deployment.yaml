@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - name: helloworld-container
+          image: amanitw/helloworld-java:latest
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+          - mountPath: "/usr/share/"
+            name: demo-storage
+      volumes:
+        - name: demo-storage
+          persistentVolumeClaim:
+            claimName: demo-pvc
