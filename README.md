@@ -1,5 +1,9 @@
 # k8-demo
-A demonstration project designed to illustrate key concepts of Kubernetes.
+A demonstration project designed to illustrate key concepts of Kubernetes. This includes following illustrations-
+1. Spawinning 1 or more than 1 replicas in a deployment.
+2. Using PV and PVC to demonstrate shared persistent storage.
+3. Using RBAC to assign/restrict roles for users.
+4. Explain about different config yaml files like Dockerfile, deployment yaml, services etc.
 
 # Pre-requisites:
 1. Install and start minikube in your local.
