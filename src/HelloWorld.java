@@ -2,15 +2,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.UUID;
 
 public class HelloWorld {
     public static void main(String[] args) throws InterruptedException {
         while (true){
             String sharedPath = "/usr/share";
-            String fileName = "output.txt";
+            String fileName = "output"+UUID.randomUUID()+".txt";
             String fullPath = sharedPath + "/" + fileName;
             String message = "Hello from the shared path!";
-
+            System.out.println("File is "+fullPath);
             // Check if the directory exists, create it if necessary
             try {
                 if (!Files.exists(Paths.get(sharedPath))) {
